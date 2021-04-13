@@ -1,5 +1,8 @@
 .row{
     color: white;
+    margin-left: 0px;
+}
+.row > h2 {
     margin-left: 20px;
 }
 .row_Posters {

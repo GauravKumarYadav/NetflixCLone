@@ -9,6 +9,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
     const [movies, setMovies] = useState([]);
     const [trailerURL, setTrailerURL] = useState("");
 
+
     const baseURL = 'https://image.tmdb.org/t/p/original/';
     
     useEffect(() => {
@@ -22,7 +23,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
 
     const opts = {
         height: '390',
-        width: '95%',
+        width: '100%',
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
@@ -33,7 +34,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
         if(trailerURL){
             setTrailerURL("");
         }else{
-            movieTrailer(movie?.title || "").then((url)=>{
+            movieTrailer(movie?.title || movie?.name || movie?.original_name || "").then((url)=>{
                 const urlParams = new URLSearchParams(new URL(url).search); 
                 setTrailerURL(urlParams.get("v"));
                 console.log(trailerURL);
@@ -42,6 +43,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
             });
         }
     }
+    console.log(movies); 
 
     return (
         <div className="row" >

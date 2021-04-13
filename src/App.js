@@ -27,7 +27,7 @@ function App() {
 			}
 		});
 		return unsubscribe;
-	}, [dispatch])
+	}, [dispatch,user])
 
 	return (
 		<div className="app">

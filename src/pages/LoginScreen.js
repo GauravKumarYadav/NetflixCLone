@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/loginscreen.css';
-import SignUpScreen from '../components/SignUpScreen';
+import SignInCard from '../components/SignInCard';
 
 function LoginScreen() {
     const [signIn, setSignIn] = useState(false);
@@ -10,7 +10,7 @@ function LoginScreen() {
             <div className="loginscreen_Background" >
                 <img
                     className="loginscreen_Logo"
-                    src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+                    src="https://www.freepnglogos.com/uploads/netflix-logo-symbol-png-1.png"
                     alt=""
                 />
                 <button className="loginscreen_Button" onClick={() => setSignIn(true)} > Sign In </button>
@@ -18,7 +18,7 @@ function LoginScreen() {
                 <div className="loginscreen_Body" >
                     {
                         signIn ? (
-                            <SignUpScreen />
+                            <SignInCard />
                         ) : (
                             <>
                                 <h1>Unlimited Films, TV Programmes and More.</h1>
@@ -33,7 +33,6 @@ function LoginScreen() {
                             </>
                         )
                     }
-
                 </div>
             </div>
         </div>
